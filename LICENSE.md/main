@@ -1,0 +1,97 @@
+#include <stdio.h>
+
+
+
+int main()
+{
+	short int numero1=0, numero2=0, resultado=0, k=0, escolha;
+	do {
+		printf("digite o numero para escolher a operaçao\n");
+		printf("1-soma\n2-subtraçao\n3-multiplicaçao\4-divisao\n");
+		scanf("%d", escolha);
+		if (escolha < 1 || escolha > 4) {
+			printf("valor invalido\n");
+		}
+	} while (escolha < 1 || escolha > 4);
+	switch (escolha)
+	{
+	case 1 :
+		do {
+			printf("incira o primeiro numero: ");
+			scanf("%d", &numero1);
+			if (numero1 > 127 || numero1 < -127) {
+				printf("numero incirido ultrapassa os 8 bits, incira novamente\n");
+			}
+		} while (numero1 > 127 || numero1 < -127);
+		do {
+			printf("incira o segundo numero: ");
+			scanf("%d", &numero2);
+			if (numero2 > 127 || numero2 < -127) {
+				printf("numero incirido ultrapassa os 8 bits, incira novamente\n");
+			}
+		} while (numero2 > 127 || numero2 < -127);
+
+		resultado = numero1 + numero2;
+
+		if (resultado > 127 || resultado < -127) {
+			printf("ocorreu overflow do resultado\n");
+		}
+		else {
+			printf("resultado da soma: %d", resultado);
+		}
+		break;
+	
+	
+	case 2:
+		break;
+	
+	
+	
+	case 3:
+		break;
+	
+	
+	case 4:
+		
+
+		do {
+			printf("incira o dividendo: ");
+			scanf("%d", &numero1);
+			if (numero1 > 127 || numero1 < -127) {
+				printf("numero incirido ultrapassa os 8 bits, incira novamente\n");
+			}
+		} while (numero1 > 127 || numero1 < -127);
+		do {
+			printf("incira o divisor:\n");
+			scanf("%d", &numero2);
+			if (numero2 > 127 || numero2 < -127) {
+				printf("numero incirido ultrapassa os 8 bits, incira novamente\n");
+			}
+			if (numero2 > numero1) {
+				printf("divisor maior que dividendo, incira novamente");
+			}
+		} while (numero2 > 127 || numero2 < -127 || numero2 > numero1);
+
+		while (numero1 >= 0) {
+			numero1 = numero1 - numero2;
+			if (numero1 > 0) {
+				k++;
+			}
+		}
+
+		resultado = k;
+		if (resultado > 127 || resultado < -127) {
+			printf("ocorreu overflow do resultado\n");
+		}
+		else {
+			printf("resultado da divisao: %d", resultado);
+		}
+		break;
+	}
+
+
+
+
+
+    return 0;
+}
