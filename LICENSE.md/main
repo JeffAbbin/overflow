@@ -6,35 +6,35 @@ int main()
 {
 	short int numero1=0, numero2=0, resultado=0, k=0, escolha;
 	do {
-		printf("digite o numero para escolher a operaçao\n");
-		printf("1-soma\n2-subtraçao\n3-multiplicaçao\4-divisao\n");
+		printf("Digite o número para escolher a operaçao\n");
+		printf(" 1-Soma\n 2-Subtração\n 3-Multiplicação\n 4-Divisão\n");
 		scanf("%d", escolha);
 		if (escolha < 1 || escolha > 4) {
-			printf("valor invalido\n");
+			printf("Valor inválido\n"); 
 		}
 	} while (escolha < 1 || escolha > 4);
 	switch (escolha)
 	{
 	case 1 :
 		do {
-			printf("insira o primeiro numero: ");
+			printf("Insira o primeiro valor: ");
 			scanf("%d", &numero1);
 			if (numero1 > 127 || numero1 < -127) {
-				printf("numero incirido ultrapassa os 8 bits, insira novamente\n");
+				printf("Valor inserido ultrapassa os 8 bits, insira novamente!\n");
 			}
 		} while (numero1 > 127 || numero1 < -127);
 		do {
-			printf("insira o segundo numero: ");
+			printf("Insira o segundo valor: ");
 			scanf("%d", &numero2);
 			if (numero2 > 127 || numero2 < -127) {
-				printf("numero insirido ultrapassa os 8 bits, insira novamente\n");
+				printf("Valor inserido ultrapassa os 8 bits, insira novamente\n");
 			}
 		} while (numero2 > 127 || numero2 < -127);
 
 		resultado = numero1 + numero2;
 
 		if (resultado > 127 || resultado < -127) {
-			printf("ocorreu overflow do resultado\n");
+			printf("Ocorreu overflow do resultado\n");
 		}
 		else {
 			printf("resultado da soma: %d", resultado);
@@ -43,11 +43,64 @@ int main()
 	
 	
 	case 2:
-		break;
-	
-	
+		do {
+			printf("Insira o primeiro valor: ");
+			scanf("%d", &numero1);
+			if (numero1 > 127 || numero1 < -127) {
+				printf("Valor inserido ultrapassa os 8 bits, insira novamente!\n");
+			}
+		} while (numero1 > 127 || numero1 < -127);
+		do {
+			printf("Insira o segundo valor: ");
+			scanf("%d", &numero2);
+			if (numero2 > 127 || numero2 < -127) {
+				printf("Valor inserido ultrapassa os 8 bits, insira novamente\n");
+			}
+		} while (numero2 > 127 || numero2 < -127);
+
+		resultado = numero1 - numero2;
+
+		if (resultado > 127 || resultado < -127) {
+			printf("Ocorreu overflow do resultado\n");
+		}
+		else {
+			printf("resultado da subtração: %d", resultado);
+		}
+	break;
 	
 	case 3:
+			do {
+			printf("Insira o primeiro valor: ");
+			scanf("%d", &numero1);
+			if (numero1 > 127 || numero1 < -127) {
+				printf("Valor inserido ultrapassa os 8 bits, insira novamente!\n");
+			}
+		} while (numero1 > 127 || numero1 < -127);
+		do {
+			printf("Insira o segundo valor: ");
+			scanf("%d", &numero2);
+			if (numero2 > 127 || numero2 < -127) {
+				printf("Valor inserido ultrapassa os 8 bits, insira novamente\n");
+			}
+		} while (numero2 > 127 || numero2 < -127);
+
+		if (numero1 == 0 || numero2 == 0){
+			resultado = 0;
+		} 
+		else{
+			for(k=0; k<numero2, k++){
+			numero1 = numero1 + numero1;
+			}
+		resultado = numero1;
+		}
+		
+
+		if (resultado > 127 || resultado < -127) {
+			printf("Ocorreu overflow do resultado\n");
+		}
+		else {
+			printf("Resultado da multiplicação: %d", resultado);
+		}
 		break;
 	
 	
@@ -55,20 +108,20 @@ int main()
 		
 
 		do {
-			printf("insira o dividendo: ");
+			printf("Insira o dividendo: ");
 			scanf("%d", &numero1);
 			if (numero1 > 127 || numero1 < -127) {
-				printf("numero insirido ultrapassa os 8 bits, insira novamente\n");
+				printf("Valor inserido ultrapassa os 8 bits, insira novamente\n");
 			}
 		} while (numero1 > 127 || numero1 < -127);
 		do {
-			printf("insira o divisor:\n");
+			printf("Insira o divisor:\n");
 			scanf("%d", &numero2);
 			if (numero2 > 127 || numero2 < -127) {
-				printf("numero insirido ultrapassa os 8 bits, insira novamente\n");
+				printf("Valor inserido ultrapassa os 8 bits, insira novamente\n");
 			}
 			if (numero2 > numero1) {
-				printf("divisor maior que dividendo, insira novamente");
+				printf("Divisor maior que dividendo, insira novamente");
 			}
 		} while (numero2 > 127 || numero2 < -127 || numero2 > numero1);
 
@@ -81,10 +134,10 @@ int main()
 
 		resultado = k;
 		if (resultado > 127 || resultado < -127) {
-			printf("ocorreu overflow do resultado\n");
+			printf("Ocorreu overflow do resultado\n");
 		}
 		else {
-			printf("resultado da divisao: %d", resultado);
+			printf("Resultado da divisao: %d", resultado);
 		}
 		break;
 	}
